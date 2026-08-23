@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { registerUser } from '../services/auth.api'
+import { useNavigate } from 'react-router-dom'
 
 
 const Register = () => {
@@ -10,6 +11,7 @@ const Register = () => {
     password: ""
   })
   const [message, setMessage] = useState(null)
+  const navigate=useNavigate()
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -29,6 +31,7 @@ const Register = () => {
         email: "",
         password: ""
       });
+      navigate('/login')
 
       setMessage(response.message);
 
