@@ -15,6 +15,8 @@ const EditTodo = () => {
 
     const [message, setMessage] = useState("");
 
+
+
     const fetchTodo = async () => {
         try {
             const response = await getTodoById(id);
@@ -50,7 +52,7 @@ const EditTodo = () => {
 
         try {
             const response = await updateTodo(id, formData);
-
+            navigate('/view-todo')
             setMessage(response.message);
 
         } catch (error) {
@@ -64,7 +66,7 @@ const EditTodo = () => {
         <div className="min-h-screen bg-gray-100 py-10 px-4">
 
             <div className="max-w-xl mx-auto  ">
-                
+
                 <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
                     Edit Todo
                 </h1>
