@@ -61,42 +61,77 @@ const EditTodo = () => {
     };
 
     return (
-        <div>
+        <div className="min-h-screen bg-gray-100 py-10 px-4">
 
-            <h1>Edit Todo</h1>
+            <div className="max-w-xl mx-auto  ">
+                
+                <h1 className="text-3xl font-bold text-gray-800 mb-6 text-center">
+                    Edit Todo
+                </h1>
 
-            {message && <p>{message}</p>}
+                {message && (
+                    <p className="mb-4 text-center text-green-600 font-medium">
+                        {message}
+                    </p>
+                )}
 
-            <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="space-y-5">
 
-                <input
-                    type="text"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleChange}
-                />
+                    <div>
+                        <label className="block text-gray-700 font-medium mb-2">
+                            Title
+                        </label>
 
-                <textarea
-                    name="description"
-                    value={formData.description}
-                    onChange={handleChange}
-                />
+                        <input
+                            type="text"
+                            name="title"
+                            value={formData.title}
+                            onChange={handleChange}
+                            className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
 
-                <select
-                    name="priority"
-                    value={formData.priority}
-                    onChange={handleChange}
-                >
-                    <option value="low">Low</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                </select>
+                    <div>
+                        <label className="block text-gray-700 font-medium mb-2">
+                            Description
+                        </label>
 
-                <button type="submit">
-                    Update Todo
-                </button>
+                        <textarea
+                            name="description"
+                            value={formData.description}
+                            onChange={handleChange}
+                            rows="4"
+                            className="w-full border border-gray-300 rounded-lg px-4 py-3 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        />
+                    </div>
 
-            </form>
+                    <div>
+                        <label className="block text-gray-700 font-medium mb-2">
+                            Priority
+                        </label>
+
+                        <select
+                            name="priority"
+                            value={formData.priority}
+                            onChange={handleChange}
+                            className="w-full border border-gray-300 rounded-lg px-4 py-3 bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        >
+                            <option value="low">Low</option>
+                            <option value="medium">Medium</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+
+                    <button
+                        type="submit"
+                        className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                    >
+                        Update Todo
+                    </button>
+
+                </form>
+
+            </div>
 
         </div>
     );

@@ -39,34 +39,77 @@ const Register = () => {
 
 
   return (
-    <div>
-      <h1>Reister</h1>
-      {message && <p>{message}</p>}
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
 
+      <div className="w-full max-w-md ">
 
-      <form onSubmit={handleSubmit}>
-        <input type="text"
-          placeholder='enter  your name'
-          name='name'
-          value={formData.name}
-          onChange={handleChange} /> <br /><br />
+        <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">
+          Register
+        </h1>
 
-        <input type="email"
-          placeholder='enter  your email'
-          name='email'
-          value={formData.email}
-          onChange={handleChange} /> <br /><br />
+        {message && (
+          <p className="text-center text-green-600 mb-4">
+            {message}
+          </p>
+        )}
 
-        <input type="password"
-          placeholder='enter  your password'
-          name='password'
-          value={formData.password}
-          onChange={handleChange} /> <br /><br />
+        <form onSubmit={handleSubmit} className="space-y-5">
 
-        <button type='submit'>Register</button>
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Name
+            </label>
 
-      </form>
+            <input
+              type="text"
+              placeholder="Enter your name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
 
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Email
+            </label>
+
+            <input
+              type="email"
+              placeholder="Enter your email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label className="block text-gray-700 font-medium mb-2">
+              Password
+            </label>
+
+            <input
+              type="password"
+              placeholder="Enter your password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+          >
+            Register
+          </button>
+
+        </form>
+
+      </div>
 
     </div>
   )
