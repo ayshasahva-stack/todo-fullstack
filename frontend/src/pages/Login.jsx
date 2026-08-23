@@ -20,6 +20,7 @@ const Login = () => {
     e.preventDefault()
     try {
       const response = await loginUser(formData)
+      localStorage.setItem("token",response.data.token)
       setFormData({
         email: "",
         password: ""
