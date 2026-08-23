@@ -3,6 +3,7 @@ import errorHandler from './middleware/error.middleware.js';
 import authRoutes from './routes/auth.routes.js';
 import todoRoutes from './routes/todo.routes.js';
 import morgan from 'morgan';
+import cors from 'cors'
 
 
 
@@ -10,8 +11,12 @@ const app = express();
 
 
 app.use(express.json());
+app.use(cors({
+    origin: "http://localhost:5173",
+    credentials: true
+}));
 
-if(process.env.NODE_ENV==='development'){
+if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))
 }
 
@@ -21,10 +26,10 @@ app.use('/api/auth', authRoutes);
 app.use('/api/todo', todoRoutes);
 
 
-app.use((req,res)=>{
+app.use((req, res) => {
     res.status(404).json({
-        success:false,
-        message:"not found"
+        success: false,
+        message: "not found"
     })
 })
 

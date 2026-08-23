@@ -24,7 +24,7 @@ const Login = () => {
         email: "",
         password: ""
       })
-           console.log(response)
+      console.log(response)
 
       setMessage(response.message)
     } catch (error) {
@@ -43,14 +43,14 @@ const Login = () => {
           placeholder='enter your name'
           name='email'
           value={formData.email}
-          onChange={handleChange} />
+          onChange={handleChange} /> <br /><br />
         <input type="password"
           placeholder='enter your password'
           name='password'
           value={formData.password}
-          onChange={handleChange} />
+          onChange={handleChange} /> <br /><br />
 
-          <button>Login</button>
+        <button>Login</button>
       </form>
 
     </div>

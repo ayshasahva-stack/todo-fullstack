@@ -1,9 +1,18 @@
 import React from 'react'
+import { Route, Routes } from 'react-router-dom'
+import Register from './pages/Register'
+import Login from './pages/Login'
+import DashBoard from './pages/DashBoard'
 
 const App = () => {
   return (
     <div>
-      <h1>hello</h1>
+      <Routes>
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/dashboard' element={<DashBoard />} />
+      </Routes>
+
     </div>
   )
 }

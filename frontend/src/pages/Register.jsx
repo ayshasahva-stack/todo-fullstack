@@ -49,19 +49,19 @@ const Register = () => {
           placeholder='enter  your name'
           name='name'
           value={formData.name}
-          onChange={handleChange} />
+          onChange={handleChange} /> <br /><br />
 
         <input type="email"
           placeholder='enter  your email'
           name='email'
           value={formData.email}
-          onChange={handleChange} />
+          onChange={handleChange} /> <br /><br />
 
         <input type="password"
           placeholder='enter  your password'
           name='password'
           value={formData.password}
-          onChange={handleChange} />
+          onChange={handleChange} /> <br /><br />
 
         <button type='submit'>Register</button>
 
